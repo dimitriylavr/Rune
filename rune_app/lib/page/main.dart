@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:rune_app/data/runeList.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -12,14 +13,7 @@ class _MainPageState extends State<MainPage> {
   CarouselController _carouselController = new CarouselController();
   int _current = 0;
 
-  final List<dynamic> _runes = [
-    {
-      'title': 'Тестовый заголовок',
-      'image':
-          'https://www.moviepostersgallery.com/wp-content/uploads/2020/08/Blackwidow2.jpg',
-      'description': 'Описание будет таким'
-    },
-  ];
+  final _runes = runeList();
 
   @override
   void initState() {
@@ -46,18 +40,19 @@ class _MainPageState extends State<MainPage> {
                 height: MediaQuery.of(context).size.height * 0.3,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      colors: [
-                        Colors.grey.shade50.withOpacity(1),
-                        Colors.grey.shade50.withOpacity(1),
-                        Colors.grey.shade50.withOpacity(1),
-                        Colors.grey.shade50.withOpacity(1),
-                        Colors.grey.shade50.withOpacity(0.0),
-                        Colors.grey.shade50.withOpacity(0.0),
-                        Colors.grey.shade50.withOpacity(0.0),
-                        Colors.grey.shade50.withOpacity(0.0),
-                      ]),
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      Colors.grey.shade50.withOpacity(1),
+                      Colors.grey.shade50.withOpacity(1),
+                      Colors.grey.shade50.withOpacity(1),
+                      Colors.grey.shade50.withOpacity(1),
+                      Colors.grey.shade50.withOpacity(0.0),
+                      Colors.grey.shade50.withOpacity(0.0),
+                      Colors.grey.shade50.withOpacity(0.0),
+                      Colors.grey.shade50.withOpacity(0.0),
+                    ],
+                  ),
                 ),
               ),
             ),
