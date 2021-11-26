@@ -1,4 +1,4 @@
-package com.example.rune_app
+package com.example.rune_second
 
 import io.flutter.embedding.android.FlutterActivity
 

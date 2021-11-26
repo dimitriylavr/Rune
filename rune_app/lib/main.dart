@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rune_app/page/main.dart';
+import 'package:rune_second/page/main.dart';
 
 void main() => runApp(const MaterialApp(
       debugShowCheckedModeBanner: false,

@@ -1,4 +1,4 @@
-# rune_app
+# rune_second
 
 A new Flutter project.
 

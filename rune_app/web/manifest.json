@@ -1,6 +1,6 @@
 {
-    "name": "rune_app",
-    "short_name": "rune_app",
+    "name": "rune_second",
+    "short_name": "rune_second",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
