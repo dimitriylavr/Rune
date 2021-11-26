@@ -28,7 +28,7 @@ class _MainPageState extends State<MainPage> {
         height: MediaQuery.of(context).size.height,
         child: Stack(
           children: [
-            Image.network(
+            Image.asset(
               _runes[_current]['image'],
               fit: BoxFit.cover,
             ),
@@ -94,7 +94,7 @@ class _MainPageState extends State<MainPage> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(15),
                                   ),
-                                  child: Image.network(rune['image'],
+                                  child: Image.asset(rune['image'],
                                       fit: BoxFit.cover),
                                 ),
                                 const SizedBox(height: 15),
