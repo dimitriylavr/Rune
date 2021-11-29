@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rune_apps/config.dart';
 import 'package:rune_apps/data/rune_class.dart';
 import 'package:rune_apps/widget/bottom_color.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class DescriptionPage extends StatefulWidget {
   const DescriptionPage({Key? key}) : super(key: key);
@@ -86,12 +87,21 @@ class _DescriptionPage extends State<DescriptionPage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      rune.description,
-                      style: const TextStyle(
-                        color: Color.fromRGBO(51, 51, 51, 0.54),
-                        height: 1.4,
-                        fontSize: 18,
+                    MarkdownBody(
+                      data: rune.practic,
+                      styleSheet: MarkdownStyleSheet.fromTheme(
+                        ThemeData(
+                          textTheme: const TextTheme(
+                            headline5:
+                                TextStyle(fontSize: 26, color: Colors.black),
+                            headline6:
+                                TextStyle(fontSize: 22, color: Colors.black),
+                            subtitle1:
+                                TextStyle(fontSize: 18, color: Colors.red),
+                            bodyText2:
+                                TextStyle(fontSize: 18, color: Colors.black),
+                          ),
+                        ),
                       ),
                     ),
                     const SizedBox(
