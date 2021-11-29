@@ -2,6 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:rune_apps/config.dart';
 import 'package:rune_apps/data/rune_list.dart';
+import 'package:rune_apps/widget/bottom_color.dart';
+
+import '../data/rune_class.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -32,7 +35,7 @@ class _MainPageState extends State<MainPage> {
               _runes[_current]['image'],
               fit: BoxFit.cover,
             ),
-            bottomColor(context),
+            const BottomColor(),
             titleName(context),
             Positioned(
               bottom: 20,
@@ -68,34 +71,6 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Positioned bottomColor(BuildContext context) {
-    return Positioned(
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.3,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            colors: [
-              const Color.fromARGB(255, 0, 0, 0).withOpacity(1),
-              const Color.fromARGB(255, 0, 0, 0).withOpacity(1),
-              const Color.fromARGB(255, 0, 0, 0).withOpacity(1),
-              const Color.fromARGB(255, 0, 0, 0).withOpacity(1),
-              const Color.fromARGB(255, 0, 0, 0).withOpacity(0.0),
-              const Color.fromARGB(255, 0, 0, 0).withOpacity(0.0),
-              const Color.fromARGB(255, 0, 0, 0).withOpacity(0.0),
-              const Color.fromARGB(255, 0, 0, 0).withOpacity(0.0),
-            ],
-          ),
         ),
       ),
     );
@@ -140,7 +115,7 @@ class _MainPageState extends State<MainPage> {
                 fontSize: 16.0, fontFamily: messiriFonts, color: Colors.black),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 5),
           AnimatedOpacity(
             duration: const Duration(milliseconds: 500),
             opacity: _current == _runes.indexOf(rune) ? 1.0 : 0.0,
@@ -162,7 +137,13 @@ class _MainPageState extends State<MainPage> {
   ElevatedButton buttonPractic(rune) {
     return ElevatedButton(
       onPressed: () {
-        print("${rune['title']} - $_current");
+        Rune runes = Rune(
+            title: rune['title'],
+            image: rune['image'],
+            description: rune['description'],
+            practic: rune['practic']);
+        //print("${rune['title']} - $_current");
+        Navigator.pushNamed(context, '/descPage', arguments: runes);
       },
       style: ElevatedButton.styleFrom(primary: Colors.black),
       child: const Text(
