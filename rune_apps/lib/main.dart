@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rune_apps/page/description.dart';
 import 'package:rune_apps/page/main.dart';
 import 'package:rune_apps/page/splash.dart';
 
-void main() => runApp(const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: RuneApp(),
-    ));
+void main() => runApp(const RuneApp());
 
 class RuneApp extends StatelessWidget {
   const RuneApp({Key? key}) : super(key: key);
@@ -17,14 +15,22 @@ class RuneApp extends StatelessWidget {
       future: Init.instance.initialize(),
       builder: (context, AsyncSnapshot snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const MaterialApp(home: Splash());
+          return const MaterialApp(
+            home: Splash(),
+            debugShowCheckedModeBanner: false,
+          );
         } else {
           return MaterialApp(
             title: 'Runes App',
+            debugShowCheckedModeBanner: false,
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
             home: const MainPage(),
+            routes: {
+              '/mainPage': (context) => const MainPage(),
+              '/descPage': (context) => const DescriptionPage()
+            },
           );
         }
       },
