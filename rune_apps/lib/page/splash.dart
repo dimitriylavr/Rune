@@ -17,8 +17,8 @@ class Splash extends StatelessWidget {
               height: MediaQuery.of(context).size.height,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage("assets/images/example.png"),
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/images/splash.png"),
                 ),
               ),
             )
