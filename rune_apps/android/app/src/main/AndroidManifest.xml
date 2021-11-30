@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rune_apps">
+    package="com.letitcode.rune_apps">
    <application
-        android:label="rune_apps"
+        android:label="Руны силы"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
