@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rune_apps/config.dart';
 import 'package:rune_apps/data/rune_class.dart';
-import 'package:rune_apps/widget/bottom_color.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
 class DescriptionPage extends StatefulWidget {
